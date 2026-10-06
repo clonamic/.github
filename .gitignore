@@ -13,3 +13,7 @@ id_ed25519*
 .vscode/
 *.swp
 *.log
+
+# tests stay local; they are not shipped
+tests/
+test/
