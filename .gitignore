@@ -17,3 +17,10 @@ id_ed25519*
 # tests stay local; they are not shipped
 tests/
 test/
+
+# agent folders and private process notes
+.claude/
+.codex/
+.cursor/
+.grok/
+Docs/
