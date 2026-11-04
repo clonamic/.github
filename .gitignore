@@ -24,3 +24,12 @@ test/
 .cursor/
 .grok/
 Docs/
+
+# local data and archives
+*.sqlite
+*.sqlite3
+*.db
+*.tgz
+*.zip
+*.bak
+secrets*
