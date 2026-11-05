@@ -31,6 +31,56 @@
 
 <hr>
 
+## 규격
+
+### 플러그인
+
+[Agent Plugins 1.0.0](https://agent-plugins.org) 표준을 따릅니다.
+
+- 원본 매니페스트 `plugin.json` 하나만 손으로 고치고, 도구별 사본(`.claude-plugin/`, `.codex-plugin/`, `.cursor-plugin/`)에 이름·버전·설명을 같게 맞춥니다.
+- 이름은 영문 소문자, 숫자, 하이픈만 쓰고, 표준 스키마에 없는 키는 넣지 않습니다.
+- 서브에이전트(`agents/`)가 없어도 스킬만으로 동작해야 합니다.
+
+```
+plugin-name/
+├── plugin.json                  # 원본 매니페스트
+├── .claude-plugin/plugin.json   # Claude Code 사본
+├── .codex-plugin/plugin.json    # Codex 사본
+├── skills/<skill-name>/SKILL.md
+├── agents/                      # 선택. 서브에이전트
+├── mcp.json                     # 선택. MCP 서버
+├── README.md
+└── LICENSE
+```
+
+코드를 쓰는 플러그인은 아래 기준을 지킵니다.
+
+| 기준 | 내용 |
+|---|---|
+| Python | 3.12 이상. 낮은 버전으로 조용히 넘어가지 않습니다 |
+| 한 스킬만 쓰는 코드 | 그 스킬의 `scripts/`에 표준 라이브러리만으로 둡니다 |
+| 여러 스킬이 쓰는 코드 | 플러그인 루트 `src/` 패키지에 두고, 진입점 하나(`python3 -m`)에서 명령 하나가 스킬 하나를 맡습니다 |
+| 외부 패키지 | 스크립트 머리에 PEP 723 메타데이터를 적고 `uv run`으로 실행합니다 |
+| 두지 않는 것 | 플러그인 폴더 안의 `.venv`, `requirements.txt`, `.python-version` |
+
+### 스킬
+
+- 진입점은 `SKILL.md`입니다. 에이전트는 이름과 설명만 먼저 보고, 필요할 때 본문을 읽습니다.
+- 앞부분 필수 항목은 `name`, `description` 두 개입니다. `description`은 1024자 이내로 하는 일과 쓰는 때를 함께 적습니다.
+- 폴더 이름은 `name`과 같고, 소문자·숫자·하이픈으로 64자 이하입니다.
+- 본문은 목적, 절차, 산출물, 예 순서로 보통 80~200줄, 길어도 500줄을 넘기지 않습니다. 세부 자료는 `references/`로 옮깁니다.
+- 슬래시 명령으로만 켜야 하는 스킬은 `disable-model-invocation: true`를 넣습니다.
+
+```
+skill-name/
+├── SKILL.md       # 필수. 이름, 설명, 절차
+├── scripts/       # 선택. 반복해서 쓰는 코드
+├── references/    # 선택. 특정 경우에만 읽는 문서
+└── assets/        # 선택. 결과물에 넣는 템플릿
+```
+
+<hr>
+
 ## 플러그인
 
 | 플러그인 | 소개 |
