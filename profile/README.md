@@ -42,19 +42,25 @@
 - 이름은 영문 소문자, 숫자, 하이픈만 쓰고, 표준 스키마에 없는 키는 넣지 않습니다.
 - 서브에이전트(`agents/`)가 없어도 스킬만으로 동작해야 합니다.
 
+코드를 쓰는 플러그인은 아래 구조와 기준을 따릅니다.
+
 ```
-plugin-name/
+my-plugin/
 ├── plugin.json                  # 원본 매니페스트
 ├── .claude-plugin/plugin.json   # Claude Code 사본
 ├── .codex-plugin/plugin.json    # Codex 사본
-├── skills/<skill-name>/SKILL.md
+├── pyproject.toml               # Python 3.12 이상. 외부 의존성이 있을 때만
+├── src/my_plugin/
+│   ├── __main__.py              # 진입점 하나. python3 -m my_plugin <명령>
+│   ├── commands/                # 명령 하나 = 스킬 하나
+│   └── core/                    # 공통 로직과 스킬 사이 계약
+├── skills/
+│   └── skill-name/SKILL.md      # 명령 한 줄로 호출
 ├── agents/                      # 선택. 서브에이전트
-├── mcp.json                     # 선택. MCP 서버
+├── tests/                       # 선택. 로컬 시험, 배포에서 제외
 ├── README.md
 └── LICENSE
 ```
-
-코드를 쓰는 플러그인은 아래 기준을 지킵니다.
 
 | 기준 | 내용 |
 |---|---|
