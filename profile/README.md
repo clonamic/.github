@@ -1,6 +1,6 @@
 <h1 align="center">$\bf{\large{\color{#6580DD} Clonamic }}$</h1>
 
-**Claude Code, Codex, Cursor, Grok에서 쓰는 AI 에이전트 스킬·플러그인 모음입니다.**
+**Claude Code, Codex, Cursor, Grok, Antigravity에서 쓰는 AI 에이전트 스킬·플러그인 모음입니다.**
 
 에이전트에게 일을 맡길 때 반복되는 문제(시키지 않은 일, 확인 없는 완료 보고, 번역투 한국어)를 줄이려고 만들었습니다. 지금 쓰는 에이전트 도구에 설치해 채팅이나 슬래시 명령으로 부르면 됩니다.
 
@@ -8,6 +8,7 @@
 ![Codex](https://img.shields.io/badge/Codex-000000?style=for-the-badge)
 ![Cursor](https://img.shields.io/badge/Cursor-000000?style=for-the-badge&logo=cursor&logoColor=white)
 ![Grok](https://img.shields.io/badge/Grok-000000?style=for-the-badge&logo=x&logoColor=white)
+![Antigravity](https://img.shields.io/badge/Antigravity-4285F4?style=for-the-badge&logo=google&logoColor=white)
 
 <hr>
 
