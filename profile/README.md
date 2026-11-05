@@ -24,11 +24,11 @@
 
 ## 구성
 
-| 층 | 하는 일 | 저장소 |
-|---|---|---|
-| 스킬 | 일 하나를 하는 방법과 양식 | [skills](https://github.com/clonamic/skills) |
-| 플러그인 | 한 역할을 위한 스킬 묶음. 필요하면 코드와 서브에이전트를 함께 담는 배포 단위 | [plugin](https://github.com/clonamic/plugin) |
-| 서브에이전트 | 독립된 컨텍스트에서 정해진 절차를 실행하는 일꾼 | [subagents](https://github.com/clonamic/subagents) |
+| 층 | 저장소 |
+|---|---|
+| 스킬 | [skills](https://github.com/clonamic/skills) |
+| 플러그인 | [plugin](https://github.com/clonamic/plugin) |
+| 서브에이전트 | [subagents](https://github.com/clonamic/subagents) |
 
 <hr>
 
