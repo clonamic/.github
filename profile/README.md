@@ -14,6 +14,9 @@
 
 ## 핵심: clonamic-harness
 
+![AI Agent](https://img.shields.io/badge/AI_Agent-D97757?style=for-the-badge&logo=claude&logoColor=white)
+![Multi-Agent Orchestration](https://img.shields.io/badge/Multi--Agent_Orchestration-1C3C3C?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iI2ZmZmZmZiI+PGcgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjEuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIj48cGF0aCBkPSJNMTIgNlYxMC41TTMgMTAuNUgyMU0zIDEwLjVWMTguNU05IDEwLjVWMTguNU0xNSAxMC41VjE4LjVNMjEgMTAuNVYxOC41Ii8+PC9nPjxjaXJjbGUgY3g9IjEyIiBjeT0iMy40IiByPSIzLjIiLz48Y2lyY2xlIGN4PSIzIiBjeT0iMjAuOCIgcj0iMi4yIi8+PGNpcmNsZSBjeD0iOSIgY3k9IjIwLjgiIHI9IjIuMiIvPjxjaXJjbGUgY3g9IjE1IiBjeT0iMjAuOCIgcj0iMi4yIi8+PGNpcmNsZSBjeD0iMjEiIGN5PSIyMC44IiByPSIyLjIiLz48L3N2Zz4K)
+
 모든 플러그인은 이 하네스에서 출발했습니다. AI 에이전트에게 일을 맡기면 혼자 판단해 과하게 만들고, 끝나지 않은 일을 끝났다고 하고, 범위 밖의 사용자 환경을 바꾼 채 되돌리지 않는 일이 생깁니다. 하네스는 AI의 성능은 그대로 두고, 넘으면 안 되는 선만 정합니다.
 
 ### 작업 흐름
@@ -35,6 +38,7 @@
 - **확인하지 않은 것은 말하지 않습니다.** 완료는 새 증거로만 판단하고, 확인 못 한 건 미검증으로 따로 적습니다.
 - **보고는 두괄식 목록으로.** 결과와 실패를 먼저, 문단 대신 짧은 목록으로 씁니다.
 - **도구가 바뀌어도 그대로.** 어떤 에이전트든 `AGENTS.md` 하나만 가리키면 같은 규칙이 적용됩니다.
+- **에이전트는 필요할 때만 늘립니다.** 혼자 처리를 기본으로, 효과가 비용보다 클 때만 작업자+검토자, 리드+전문가, 결정 검토로 팀을 꾸립니다. 다른 에이전트 CLI(Claude, Grok, Hermes)에 일을 맡기는 것도 범위를 정해 한 번만 합니다.
 
 <hr>
 
